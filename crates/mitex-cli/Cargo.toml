@@ -1,0 +1,32 @@
+[package]
+name = "mitex-cli"
+description = "CLI for MiTeX."
+categories = ["compilers", "command-line-utilities"]
+keywords = ["cli", "language", "compiler", "latex", "typst"]
+authors.workspace = true
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "mitex"
+path = "src/main.rs"
+test = false
+doctest = false
+bench = false
+doc = false
+
+[dependencies]
+
+[build-dependencies]
+anyhow.workspace = true
+vergen.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+prebuilt-spec = ["mitex-spec-gen/prebuilt"]
+generate-spec = ["mitex-spec-gen/generate"]

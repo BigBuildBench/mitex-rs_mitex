@@ -1,0 +1,25 @@
+[package]
+name = "mitex-wasm"
+description = "Wasm module which uses mitex, running in browsers and Typst"
+authors.workspace = true
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+
+[features]
+rkyv = ["mitex-spec/rkyv", "mitex-spec/rkyv-validation"]
+web = ["wasm-bindgen"]
+typst-plugin = ["wasm-minimal-protocol"]
+spec-api = []
+
+default = ["rkyv"]
+
+[lints]
+workspace = true
